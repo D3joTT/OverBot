@@ -5,6 +5,8 @@ import discord
 with open('config/config.json', 'r') as cjson:
     config = json.load(cjson)
 
+bot = commands.Bot(command_prefix=config["prefix"])
+
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name=config["status"]))
