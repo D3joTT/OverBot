@@ -7,6 +7,8 @@ with open('config/config.json', 'r') as cjson:
 
 bot = commands.Bot(command_prefix=config["prefix"])
 
+png = config["img"]
+
 @bot.event
 async def on_ready():
     await bot.change_presence(activity=discord.Game(name=config["status"]))
