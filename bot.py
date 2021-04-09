@@ -1,5 +1,9 @@
+import json
+
 import discord
 
+with open('config/config.json', 'r') as cjson:
+    config = json.load(cjson)
 
 @bot.event
 async def on_ready():
@@ -12,4 +16,4 @@ async def on_ready():
           "  \___/  \_/ \___|_|  |____/ \___/ \__|")
 
 
-bot.run("")
+bot.run(config["token"])
